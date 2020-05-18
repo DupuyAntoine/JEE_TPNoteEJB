@@ -42,7 +42,7 @@
     </head>
     <body>
         <h1>Page 3</h1>
-        <form action="page1.jsp" method="post">
+        <form action="page3.jsp" method="post">
             <label for="text">Note : </label>
             <textarea name="text" id="text"><%= notation %></textarea>
             <p><%= maj %></p>
