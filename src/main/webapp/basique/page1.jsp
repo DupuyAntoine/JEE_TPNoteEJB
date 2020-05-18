@@ -24,7 +24,7 @@
             );
             request.getSession().setAttribute("note", note);
         }
-        if (!text.equals(note.getText())) {
+        if (text != null && !text.equals(note.getText())) {
             note.updateText(text);
             note.updateDate(new Date()).toString();
         }
@@ -50,5 +50,6 @@
                 <input type="submit" value="Envoyer">
             </div>
         </form>
+        <a href="../index.html">Menu principal</a>
     </body>
 </html>

@@ -17,6 +17,7 @@
     try {
         text = request.getParameter("text");
         SessionBeanNoteLocal note = (SessionBeanNoteLocal)request.getSession().getAttribute("note");
+        System.out.println(note.getText());
         if (note == null) {
             InitialContext ctx = new InitialContext();
             note = (SessionBeanNoteLocal)ctx.lookup(
@@ -24,7 +25,7 @@
             );
             request.getSession().setAttribute("note", note);
         }
-        if (!text.equals(note.getText())) {
+        if (text != null && !text.equals(note.getText())) {
             note.updateText(text);
             note.updateDate(new Date()).toString();
         }
@@ -50,5 +51,6 @@
                 <input type="submit" value="Envoyer">
             </div>
         </form>
+        <a href="../index.html">Menu principal</a>
     </body>
 </html>
