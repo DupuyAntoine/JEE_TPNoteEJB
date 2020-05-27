@@ -6,6 +6,7 @@
 package tpnote;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,6 +28,7 @@ public class Etudiant implements Serializable {
     private String login;
     private String mdp;
     private int age;
+    private List<FicheSynthese> fiches;
 
     public Etudiant() {
         
@@ -62,6 +64,38 @@ public class Etudiant implements Serializable {
     
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+    
+    public String getLogin() {
+        return login;
+    }
+    
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getMdp() {
+        return mdp;
+    }
+    
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
+    public List<FicheSynthese> getFiches() {
+        return fiches;
+    }
+    
+    public void setFiches(List<FicheSynthese> fiches) {
+        this.fiches = fiches;
     }
 
     @Override
