@@ -13,5 +13,5 @@ import javax.ejb.Local;
  */
 @Local
 public interface RecuperationEtudiantLocal {
-    public Etudiant checkIdentity();
+    public Etudiant checkIdentity(String login, String mdp);    
 }

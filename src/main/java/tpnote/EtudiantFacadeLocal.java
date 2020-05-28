@@ -29,4 +29,6 @@ public interface EtudiantFacadeLocal {
 
     int count();
     
+    Etudiant findByLogin(String login);
+    
 }

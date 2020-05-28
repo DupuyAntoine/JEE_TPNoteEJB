@@ -19,9 +19,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author AdminEtu
  */
-@WebServlet(name="DemoEtudiant", urlPatterns="/DemoEtudiant")
-public class DemoEtudiant extends HttpServlet {
-    
+@WebServlet(name = "RegisterEtudiant", urlPatterns = {"/RegisterEtudiant"})
+public class RegisterEtudiant extends HttpServlet {
+
     @EJB
     EtudiantFacadeLocal facade;
 
@@ -52,7 +52,7 @@ public class DemoEtudiant extends HttpServlet {
             out.println("<title>Servlet DemoEtudiant</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DemoEtudiant at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet RegisterEtudiant at " + request.getContextPath() + "</h1>");
             
             List<Etudiant> liste = facade.findAll();
             

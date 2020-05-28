@@ -19,26 +19,18 @@ public class RecuperationEtudiant implements RecuperationEtudiantLocal {
     @EJB
     EtudiantFacade facade;
     Etudiant etudiant;
-    String login;
-    String mdp;
 
     public RecuperationEtudiant() {
     }
     
-    public RecuperationEtudiant(String login, String mdp) {
-        this.login = login;
-        this.mdp = mdp;
-    }
-    
     @Override
-    public Etudiant checkIdentity() {
+    public Etudiant checkIdentity(String login, String mdp) {
         List<Etudiant> liste = facade.findAll();
         for (Etudiant e: liste) {
-            if (e.getLogin().equals(this.login) && e.getMdp().equals(this.mdp)) {
+            if (e.getLogin().equals(login) && e.getMdp().equals(mdp)) {
                 this.etudiant = e;
             }
         }
         return this.etudiant;
     }
-
 }
